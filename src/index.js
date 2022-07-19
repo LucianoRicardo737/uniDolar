@@ -17,8 +17,8 @@ const whitelist = [`http://192.168.1.11`, 'http://192.168.1.4' , 'https://maxtec
 
 app.use(cors(
   {
-    origin: whitelist,
-    creadentials: true,
+    origin: "*",
+    creadentials: false,
     optionsSuccessStatus: 200
   }
 ))
