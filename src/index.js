@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan'
 import 'dotenv/config'
 import dolarHoy from './routes/dolarhoy_routes';
+import cors from 'cors'
 
 const app = express()
 
