@@ -11,22 +11,16 @@ app.use(express.urlencoded({ extended: false }))
 app.use(morgan('common'))
 
 
-// const whitelist = [`http://192.168.1.11:3002`, 'http://alinstante.ar',  'https://www.alinstante.ar', 'https://alinstante.ar']
+const whitelist = [`http://192.168.1.11`, 'http://192.168.1.4' , 'https://maxtecno.com.ar/', 'https://www.maxtecno.com.ar/']
 
 
-// app.use(cors(
-//   {
-//     origin: whitelist,
-//     creadentials: true,
-//     optionsSuccessStatus: 200
-//   }
-// ))
-
-// const stats_route = require('./routes/stats_route')
-// app.use('/back/order/actions', order_route)
-
-
-
+app.use(cors(
+  {
+    origin: whitelist,
+    creadentials: true,
+    optionsSuccessStatus: 200
+  }
+))
 
 app.use('/dolarHoy', dolarHoy);
 
