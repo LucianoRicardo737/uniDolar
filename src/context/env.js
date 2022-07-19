@@ -1,0 +1,1 @@
+export const webDolarHoy = "https://www.dolarhoy.com/cotizaciondolarblue"
