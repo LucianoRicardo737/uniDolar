@@ -107,7 +107,7 @@ router.get('/', async (req, res) => {
 
   res.status(200).json(data)
   } catch (error) {
-    res.status(400).json({msg:"error feching dolar blue from dolar hoy"})
+    res.status(400).json({msg:"error feching dolar from dolar hoy"})
   }
 })
 

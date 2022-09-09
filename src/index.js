@@ -13,19 +13,16 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use(morgan('common'))
 
-
-const whitelist = [`http://192.168.1.11`, 'http://192.168.1.4']
-
 app.use(cors(
   {
-    origin: whitelist,
+    origin: "*",
     creadentials: false,
     optionsSuccessStatus: 200
   }
 ))
 
-app.use('/dolarHoy', dolarHoy);
-app.use('/infobae', infobae);
+app.use('/uniCoin/dolarHoy', dolarHoy);
+app.use('/uniCoin/infobae', infobae);
 
 
 
