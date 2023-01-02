@@ -6,7 +6,7 @@ import fetchData from '../context/fetchData';
 const router = Router();
 
 router.get('/', async (req, res) => {
-  try {
+    try {
 
         const body = await fetchData(webInfobae)
 
@@ -14,47 +14,48 @@ router.get('/', async (req, res) => {
         const dolarMore = $('div.excbar')
 
 
-        let nacion, 
-        tarjeta,
-        libre, 
-        mep, 
-        liqui,
-        rp
+        let nacion,
+            tarjeta,
+            libre,
+            mep,
+            liqui,
+            rp
 
 
         const filters = {
-            nacion:{
-                text:'Dólar Banco Nación',
+            nacion: {
+                text: 'Dólar Banco Nación',
+                href: "https://www.infobae.com/tag/dolar-banco-nacion"
+            },
+            tarjeta: {
+                text: 'Dólar Turista',
+                href: "https://www.infobae.com/tag/dolar-turista"
+            },
+            libre: {
+                text: 'Dólar Libre',
                 href: "https://www.infobae.com/tag/dolar-hoy"
             },
-            tarjeta:{
-                text:'Dólar tarjeta',
-                href: "https://www.infobae.com/tag/dolar-tarjeta"
+            mep: {
+                text: 'Dólar MEP',
+                href: "https://www.infobae.com/tag/dolar-bolsa"
             },
-            libre:{
-                text:'Dólar Libre',
-                href: "https://www.infobae.com/tag/dolar-libre"
+            liqui: {
+                text: 'Contado con liqui',
+                href: "https://www.infobae.com/tag/dolar-contado-con-liqui"
             },
-            mep:{
-                text:'Dólar MEP',
-                href: "https://www.infobae.com/tag/dolar-mep"
-            },
-            liqui:{
-                text:'Contado con liqui',
-                href: "https://www.infobae.com/tag/contado-con-liqui"
-            },
-            rp:{
-                text:'Riesgo País',
+            rp: {
+                text: 'Riesgo País',
                 href: "https://www.infobae.com/tag/riesgo-pais"
             },
         }
-        
-        
-       dolarMore.find('a').map((i, link)=>{
+
+
+        dolarMore.find('a').map((i, link) => {
 
             const key = link.attribs.href.toLowerCase()
             let data = $(link).text()
-            
+            console.log(data)
+
 
             switch (key) {
                 case filters.nacion.href:
@@ -80,16 +81,16 @@ router.get('/', async (req, res) => {
                 case filters.rp.href:
                     data = data.split(filters.rp.text)[1]
                     rp = data
-                    break;  
-                default: data 
-                    break; 
+                    break;
+                default: data
+                    break;
             }
 
             return data
         })
 
-        
-        function parse(data){
+
+        function parse(data) {
             return parseFloat(parseFloat(data).toFixed(2))
         }
 
@@ -98,15 +99,15 @@ router.get('/', async (req, res) => {
             tarjeta: parse(tarjeta),
             libre: parse(libre),
             mep: parse(mep),
-            liqui: parse(liqui), 
+            liqui: parse(liqui),
             rp: parse(rp)
         }
 
-
-  res.status(200).json(data)
-  } catch (error) {
-    res.status(400).json({msg:"error feching dolar from infobae"})
-  }
+        console.log(data)
+        res.status(200).json(data)
+    } catch (error) {
+        res.status(400).json({ msg: "error feching dolar from infobae" })
+    }
 })
 
 
