@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         const $ = cheerio.load(body);
         const dolarMore = $('div.excbar')
 
+        
 
         let nacion,
             tarjeta,
@@ -25,33 +26,33 @@ router.get('/', async (req, res) => {
         const filters = {
             nacion: {
                 text: 'Dólar Banco Nación',
-                href: "https://www.infobae.com/tag/dolar-banco-nacion"
+                href: "https://www.infobae.com/tag/dolar-banco-nacion/"
             },
             tarjeta: {
                 text: 'Dólar Turista',
-                href: "https://www.infobae.com/tag/dolar-turista"
+                href: "https://www.infobae.com/tag/dolar-turista/"
             },
             libre: {
                 text: 'Dólar Libre',
-                href: "https://www.infobae.com/tag/dolar-hoy"
+                href: "https://www.infobae.com/tag/dolar-hoy/"
             },
             mep: {
                 text: 'Dólar MEP',
-                href: "https://www.infobae.com/tag/dolar-bolsa"
+                href: "https://www.infobae.com/tag/dolar-bolsa/"
             },
             liqui: {
                 text: 'Contado con liqui',
-                href: "https://www.infobae.com/tag/dolar-contado-con-liqui"
+                href: "https://www.infobae.com/tag/dolar-contado-con-liqui/"
             },
             rp: {
                 text: 'Riesgo País',
-                href: "https://www.infobae.com/tag/riesgo-pais"
+                href: "https://www.infobae.com/tag/riesgo-pais/"
             },
         }
 
 
         dolarMore.find('a').map((i, link) => {
-
+            
             const key = link.attribs.href.toLowerCase()
             let data = $(link).text()
             console.log(data)
