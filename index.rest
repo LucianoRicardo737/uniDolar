@@ -3,3 +3,20 @@ GET http://192.168.1.11:7000/uniCoin/dolarHoy/ HTTP/1.2
 ###
 
 GET http://192.168.1.11:7000/uniCoin/infobae/ HTTP/1.2
+
+####
+
+GET /byMinute HTTP/3
+Host: currencies-data.infobae.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+Accept: application/json, text/plain, */*
+Accept-Language: es-AR,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Origin: https://www.infobae.com
+Connection: keep-alive
+Referer: https://www.infobae.com/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+Pragma: no-cache
+Cache-Control: no-cache
