@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { apiInfobae } from '../context/env';
+import { apiInfobae } from '../context/env.js';
 
 const router = Router();
 

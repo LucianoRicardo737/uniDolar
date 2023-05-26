@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import cheerio from 'cheerio';
-import { webDolarHoy } from '../context/env';
-import fetchData from '../context/fetchData';
+import { webDolarHoy } from '../context/env.js';
+import fetchData from '../context/fetchData.js';
 
 const router = Router();
 
