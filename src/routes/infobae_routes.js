@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import cheerio from 'cheerio';
 import { apiInfobae } from '../context/env';
 
 const router = Router();
